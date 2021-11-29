@@ -1,0 +1,29 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
+	<script>
+		$(function(){
+			$("#btn1").click(function(){
+				$("p.ar").toggle(1000);
+			});
+		
+			$("#btn2").click(function(){
+				$("p.if").fadeToggle(1000);
+			});
+		
+			$("#btn3").click(function(){
+				$("p").slideToggle(1000);
+			});
+		});
+	</script>
+	<body>
+		<button id="btn1">Toggle</button>
+		<button id="btn2">Fade Toggle</button>
+		<button id="btn3">Slide Toggle</button>
+
+		<p class="ar" id="yarci">Paragraf 1</p>
+		<p class="if" id="yarci">Turkey is very beautiful country.Because people are so pretty</p>
+
+	</body>
+</head>
+</html>

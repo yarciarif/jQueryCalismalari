@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+	$(function() {
+		var icerik=$("#icerik");
+
+		icerik.keyUp(function(){
+			$("#mesaj").text("Mesaj:"+ icerik.val());
+		});
+	});
+
+</script>
+
+</head>
+
+<body>
+	<input name="icerik" id="icerik">
+	<h1 id="mesaj">Mesaj:</h1>
+	
+</body>
+</html>

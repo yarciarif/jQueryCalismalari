@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tab Uygulaması</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  		<script type="text/javascript">
+  		$(function(){
+  				/*TAB UYGULAMASI*/
+
+  				$("ul#tab li:first").addClass("aktif");
+  		//		$("div$tab_icerik:not(:first)").hide();		EXPLORER DA SORUN CIKARTIYOO
+  				$("div.tab_icerik").hide();
+  				$("div.tab_icerik:first").show();
+
+  				$("ul#tab li").click(function(e){
+  					var index=$(this).index();
+  					$("ul#tab li").removeClass("aktif");
+  					$(this).addClass("aktif");
+				
+
+				$("div.tab_icerik").hide();
+				$("div.tab_icerik:eq("+ index +")").slideDown(300);
+  				return false;
+  				});
+  					
+  				
+});
+  		</script>
+  		<style>
+  			body{
+  				font:12px Arial
+  			}
+  			ul, li{
+  				padding:0; 
+  				margin:0; 
+  				list-style: none;
+  			}
+  			a{
+  				text-decoration: none
+  			}
+
+  			.clear{
+  				clear: both;
+  			}
+  			ul#tab{
+  				margin-bottom: 10px;
+  				height: 30px; 
+  			}
+  			ul#tab li{
+  				float: left; 
+  				margin-right: 5px;
+  			}
+  			ul#tab li a{
+  				display: block; 
+  				border:1px solid #bbb; 
+  				padding: 4px 10px; 
+  				color: #333; 
+  				border-top: #e1e1e1; 
+  				border-left-color: #e1e1e1; 
+  			}
+  			ul#tab li.aktif a{
+  				background-color: #000; 
+  				color: #fff; 
+  				border-color: #000;
+  			}
+
+  			div.tab_icerik{
+  				border:2px solid #ddd;
+  				padding: 20px;
+  				color: #aaa;
+  			}
+  		</style>
+	</head>
+<body>
+	<ul id="tab">
+		<li><a href="#">1.Tab</a></li>
+		<li><a href="#">2.Tab</a></li>
+		<li><a href="#">3.Tab</a></li>
+	</ul>
+	<div class="clear"></div>
+	<div class="tab_icerik">Burası 1.Tab içeriği</div>
+	<div class="tab_icerik">Burası 2.Tab içeriği</div>
+	<div class="tab_icerik">Burası 3.Tab içeriği</div>
+</body>
+</html>

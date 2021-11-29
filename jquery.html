@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQUERY</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">
+  	$(function(){
+
+//jquery nin başlangıc hali
+/*    $("p,a,div.yarci,div#yarci").hide(2000).show(3000);
+  		$("p").css({
+  			"color":"red",
+  			"text-decoration":"underline"
+});
+      
+//jquery nin içinde css kullanma//
+  
+  		alert($("p").css("text-decoration"));
+  		$("a").css({
+  			"background-color":"yellow"
+});
+  		var link= $("a").attr("href");
+  		 
+//jquery nin attiributleri kullanma
+  		$("img").attr({
+  			"src":"https://img.fanatik.com.tr/img/78/740x418/5ba51c05ae298b2897583feb",
+  			"title":"fikir alışverişi"
+  		});
+//jquery fonksiyon tanımlama ve kullanma
+
+        $.yarci={
+          gonder:function(url,sitesahibi){
+            alert(url+" "+sitesahibi);
+          },
+          onayla:function(){
+            alert("Onaylandııı!!");
+          }
+        }
+//fonksiyon içinde kullanma tıklama
+
+        $("div.yarci1").click(function(){
+          var val=$(this).text();
+          alert(val);
+        });
+             
+// ul tagı içinde kullanp tıklama 
+        $("ul.yarci2 li").click(function(){
+          var index=$(this).index();
+          alert(index);
+        });
+
+// taga tıklandıgında gizleme
+        $("ul.yarci2 li").click(function(){
+          $("#yarci3").hide(1000);
+        });
+
+//boşluk kaldırma trim fonksiyonu BOŞLUKLARI KALDIRIYO
+        $("button").click(function(){
+          var deger=$("input[name=deger]").val();
+          deger=$.trim(deger);
+          
+          if(!deger){
+            alert("Boş Bırakmayın!!");
+          }
+          else
+          alert(deger);
+        });
+
+//jquery live metodu O NESNENİN KLONUNU OLUŞTURUYO 
+        $("button").live("click",function(){
+          $(this).after('<button>Bana da Tıkla</button>');
+        }),
+
+        $("p").live({
+          click:function(){
+            $(this).after("<p>Bana da Tıkla</p>");
+          },
+          mouseover:function(){
+            $(this).addClass("deneme");
+          },
+          mouseout:function(){
+            $(this).removeClass("deneme");
+          }
+        });
+        //  APPEND METODU İLE İSTEDİGİMİZ YERİN İÇİNDE SONA YENİ BİR NESNE OLUSTURABİLİYORUZ
+        $("a").click(function(){
+            $("div.deneme1").append('<div>Bu Yeni Div</div>').hide().show(3000);  
+        });
+
+//index metodunu kullanma KULLANILCAK TAGIN İNDİSİNİ SEÇİP ONLA İŞLEMLER YAPMA
+        $("div.tab:not(:first)").hide();
+        $("ul li").click(function(){
+          var index= $(this).index();
+          $("div.tab").hide();
+          $("div.tab:eq("+index+")").show();
+        });
+
+
+// last filtresi kullanma TAGLARIN İÇİNDEN BİR TANESİNİ SEÇİP ONLA İŞLEMLER YAPABİLİRİZ
+        $("ul#yarci4 li:first a").css("color" ,"red"); 
+
+
+// getJSON fonksiyonu JSON DAN VERİLERİ ALIP ONLARLA İŞLEM YAPABİLME
+
+        $.getJSON("https://graph.facebook.com/tayfunerbilen",function(veri){
+          $(".sonuc").html('<strong>Kullanıcı Adı:</strong>'+veri.username+'<br><strong>Kullanıcı Linki:</strong> <a href="'+veri.link+'">'+veri.link+'</a>');
+        });
+
+//each düngüsü ile işlem yapabilme
+
+        $("ul").each(function(){
+          $("li:last a",this).css("color","red");
+        });
+  
+
+//remove metodu  HERHANGİ BİR NESNEYİ TAMAMEN KALDIRMAYA YARAR 
+
+        $("button.yarci5").click(function(){
+          $("div.yarci5").remove();
+        });
+
+// toggle metodu GÖSTERİLEN BİR NESNEYİ GİZLEMEYE VE GİZLENEN BİR NESNEYİ GÖSTERMEYE YARAR        
+        $("button.yarci5").click(function(){
+          $("div.yarci5").toggle();
+        });
+
+
+//slide metodları SLİDER GİBİ HAREKETLİ GİZLE GÖSTER          slideUP   slideDown   slideToggle
+
+
+        $("button.yarci5").click(function(){
+          $("div.yarci5").slideToggle();
+        });
+
+// hover metodu ÜZERİNE GELİNDİGİNDE GİZLENMESİ YA DA GÖSTERİLMESİ GİBİ OLAYLARIN YAPILMASINI SAGLAR
+
+
+        $("div.yarci6").hover(function(){
+          $("div.yarci7").hide();
+        },function(){
+          $("div.yarci7").show();
+        });
+
+// size metodunu    
+
+        var toplamLi=$("ul li").size();//lenght
+          alert(toplamLi);
+
+// fade metodlarıı    fadeIn  fadeOut  fadeToggle  fadeTo 
+
+        $("button.fade").click(function(e){
+          $("div.yarci7").fadeTo(4000,0.2);
+        });      
+
+// :eq filtresi ve eq metodu TAGLARIN İÇİNDEKİLERİ ÖZEL OLARAK SEÇMEMİZİ SAĞLAR
+        
+        $("ul li").eq(0).css("background-color","lightblue");
+
+animete metodu    NESNELERİMİZ ARASINDA ANİMASYONLAR GECİŞLER YAPMAMIZI SAGLAR
+*/
+        $("div.yarci8").animate({
+          "width":"100px",
+       },1000).animate({
+        "height":"100px",
+       },1000).animate({
+        "marginLeft":"500px"
+       },2000).animate({
+        "marginTop":"200px"
+       },2000).animate({
+        "marginLeft":0,
+        "marginTop":0
+       },2000).animate({
+        "marginTop":"200px"
+       },2000).animate({
+        "marginLeft":"1200px",
+        "marginTop":0
+       },2000);
+
+
+//parent metoduu  SECİLEN NESNENİN BİR ÜST PARENTİYLE İLGİLİ İŞLEMLER YAPMAMIZI SAĞLAYAN METOD 
+
+      //  $("button").click(function(){
+        //  $(this).parent().remove();
+//        })
+
+
+
+}); 
+  </script>
+  <style>
+    p.deneme{
+      background-color: red;
+    }
+    div.yarci5{
+      background-color: grey; border:5px solid yellow; padding:20px; 
+    }
+    div.yarci6{
+      background-color: grey; border:5px solid yellow; padding:120px; 
+    }
+    div.yarci7{
+      background-color: grey; border:5px solid yellow; padding:20px; 
+    }
+    .yarci8{
+      background-color: yellow; border:3px solid red; padding: 50px; 
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="yarci8">Animasyon Alanı</div><br><br><br><br>
+	<p>Bu bir paragraftır</p>
+	<a href="http://www.erbilen.net">Bu bir linktir</a>
+	<div class="yarci">Bu bir div alanıdır</div>
+	<div id="yarci">Bu bir div alanıdır</div>
+  <img/><hr>
+	<button type="button" class="btn btn-default">Gönder</button>
+
+  <input type="submit" onclick="$.yarci.gonder('ArifYarcı.net','AYARCIII')">
+  <input type="submit" onclick="$.yarci.onayla()">
+
+<div class="yarci1">Bana Tıkla</div>
+<ul class="yarci2">
+  <li>1.li</li>
+  <li>2.li</li>
+  <li>3.li</li>
+  <li>4.li</li>
+</ul>
+
+<div id="yarci3">Bu div birazdan gizlenecek :)</div>
+	
+
+<input type="text" name="deger">
+<button>Sonucu Al</button><hr>
+
+<button>Buraya Tıkla</button>
+<p class="deneme">Bana da Tıkla</p>
+
+
+<a href="#">Buraya Tıkla</a>
+<div class="deneme1"></div>
+
+
+<ul id="yarci4">
+  <li><a href="#">1.Tab</a></li>
+  <li><a href="#">2.Tab</a></li>
+  <li><a href="#">3.Tab</a></li>
+</ul>
+
+<ul id="yarci4">
+  <li><a href="#">1.Tab</a></li>
+  <li><a href="#">2.Tab</a></li>
+  <li><a href="#">3.Tab</a></li>
+</ul>
+
+<div class="tab">1.div</div>
+<div class="tab">2.div</div>
+<div class="tab">3.div</div><hr>
+
+
+
+<div class="yarci5">Bu kaldırılacak divdir</div>
+<button class="yarci5">Tıkla Kaldır</button>  <hr>
+
+
+
+<div class="yarci6">Buranın Üzerine Gel</div><hr>
+<div class="yarci7">Burası Kaybolsun :)</div><hr>
+
+<button class="fade">Göster</button><br><br><br><br><br>
+
+<ul>
+  <li>Bu denemedir..<button>Kapat</button></li>
+  <li>Bu denemedir..<button>Kapat</button></li>
+  <li>Bu denemedir..<button>Kapat</button></li>
+  <li>Bu denemedir..<button>Kapat</button></li>
+  <li>Bu denemedir..<button>Kapat</button></li>
+</ul>
+
+
+
+
+</body>
+</html>

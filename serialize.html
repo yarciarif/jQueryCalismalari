@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tab Uygulaması</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  		<script type="text/javascript">
+  		$(function(){
+
+/*
+  			// SERİALİZE METODU FORMDAKİ NESNELERİN DEGERLERİNİ ALMAMIZI SAĞLAR   BUTONA TIKLADIGIMZDA İNPUTUN İÇİNDEKİ DEGELERİ ALIP ALERTLE GÖSTERİYO
+  			$("button").click(function(e){
+  				var deger = $("form#form1").serialize();
+  				alert(deger);
+  			});
+
+  			//HASCLASS METODUU SEÇİLEN NESNELER İÇİNDE ARADIĞIMIZ CLASS BULUNUYOR MU ?
+  			if($("div").hasClass("yarci1")){
+  				alert("Yarci Divi Bulnuyor..");
+  			}
+  			
+  			var sonuc=$("div").hasClass("yarci");
+  			if(sonuc){
+  				//alert("Yarci Divi Bulunuyo...");
+  			}
+  			$("select").change(function(e){
+  				var sec =$(this).val();
+  				alert(sec);
+  			})
+
+			// html metoduu   HTML İLE YAZDIGIMIZ KODLARIN İÇİNDEKİ HER ŞEYİ ALIP İŞLEM YAPABİLİYORUZ !!
+
+			var deger=$(".yarci2").html();
+			$(".yarci3").html(deger);
+
+			// VAL METODU DA HEMEN HEMEN HTML E BENZER İNPUTUN İÇİNDEKİLERİ ALIP İŞLEM YAPABİLİYOR
+			$("button").click(function(e){
+				($("input.yarci4").val("Arif Yarcı"));
+			});
+			//TOGGLE MANTIGI (BİR VAR BİR YOKK::) SINIFLAR ÜZERİNDEN TIKLANDIGINDA İŞLEM YAPIYOR
+			
+			$("#yarci2").click(function(){
+				$(this).toggleClass("yarci3");
+			});
+			$("#yarci2").click(function(e){
+				$(this).removeClass("yarci2");//addClass()
+			});
+*/	
+			//PREPEND METODUUU
+			$(".yarci2").prepend('<input></input>');
+});
+</script>
+<style>
+	.yarci2{
+		background-color: lightgreen; 
+		border:5px solid #ddd; 
+		padding:10px;
+	}
+	.yarci3{
+		background-color: lightblue; 
+		border:5px solid #ddd; 
+		padding:10px;
+	}
+</style>
+</head>
+<body>
+	<div class="yarci"></div>
+	<div class="yarci1"></div>
+	<form action="" id="form1">
+	<table>
+		<tr>
+			<td>Kullancı Adı:</td>
+			<td><input type="text" name="kadi"></td>
+		</tr>
+
+		<tr>
+			<td>E-Posta:</td>
+			<td><input type="text" name="eposta"></td>	
+		</tr>
+
+		<tr>
+			<td>Şifre:</td>
+			<td><input type="password" name="sifre"></td>
+		</tr>
+
+		<tr>
+			<td>Cinsiyet:</td>
+			<td><select name="cinsiyet"><option value="Boş"><option value="Erkek">Erkek</option><option value="Bayan">Bayan</option></select></td>
+		</tr>
+
+		<tr>
+			<td>Şehir:</td>
+			<td>
+				<select name="sehir">
+					<option value="Denizli">Denizli</option>
+					<option value="İstanbul">İstanbul</option>
+					<option value="İzmir">İzmir</option>
+					<option value="Antalya">Antalya</option>
+				</select></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button>Kayıt Ol</button></td>
+		</tr>
+	</table>
+	</form><hr>
+	
+	<div id="yarci2" class="yarci2">Bu <strong>bir</strong> deneme yazısıdır...</div>
+	<div id="yarci3"></div>
+	<input type="text" class="yarci4" name="deger1">
+	<button class="buton">İşlem Yap</button>
+</body>
+</html>
